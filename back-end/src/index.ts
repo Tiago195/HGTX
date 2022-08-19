@@ -8,5 +8,4 @@ app.get('/', (_req, res) => {
   res.status(200).json({ message: 'okay' });
 });
 
-
 export { app };
