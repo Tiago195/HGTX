@@ -14,7 +14,7 @@ module.exports = {
   getById: async (req, res, next) => {
     try {
       const { id } = req.params;
-
+      // console.log(id);
       const user = await service.getById(id);
 
       res.status(httpStatus.OK).json(user);

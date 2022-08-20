@@ -7,7 +7,7 @@ module.exports = (req, _res, next) => {
 
   if (!token) next(generateError('Token not found', httpStatus.NOT_FOUND));
 
-  const { data } = jwt.decode(token);
+  const data = jwt.decode(token);
 
   if (!data) next(generateError('Token must be a valid', httpStatus.UNAUTHORIZED));
 

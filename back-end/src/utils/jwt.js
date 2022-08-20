@@ -9,10 +9,10 @@ const jwtConfig = {
 
 module.exports = {
   encode: (data) => {
-    const { birthDate, phoneNumber, createdAt, updatedAt,
-      password, cpf, ...dataUser } = data;
-
-    return JWT.sign({ data: dataUser }, secret, jwtConfig);
+    // const { birthDate, phoneNumber, createdAt, updatedAt,
+    //   password, cpf, ...dataUser } = data;
+    const { name, email, id, status } = data;
+    return JWT.sign({ name, email, id, status }, secret, jwtConfig);
   },
   decode: (token) => JWT.decode(token),
 };

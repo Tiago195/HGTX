@@ -10,18 +10,18 @@ module.exports = {
   },
   getById: async (id) => {
     const existsUser = await user.findByPk(id);
-
     if (!existsUser) throw generateError('User not found', httpStatus.NOT_FOUND);
     delete existsUser.dataValues.password;
-
+    // console.log('user', existsUser);
     return existsUser;
   },
   getByEmailAndPassword: async ({ email, password }) => {
     const existsUser = await user.findOne({ where: { email, isAdmin: 1 } });
-
+    // console.log(existsUser);
     if (!existsUser) throw generateError('Only admins are allowed', httpStatus.FORBIDDEN);
 
     const isPassword = await bcrypt.compare(password, existsUser.password);
+    // console.log(isPassword);
 
     if (!isPassword) throw generateError('Email or Password incorrect', httpStatus.UNAUTHORIZED);
 
