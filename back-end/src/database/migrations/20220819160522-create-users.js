@@ -7,7 +7,7 @@ module.exports = {
    */
 
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -38,14 +38,20 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING,
+        defaultValue: 'Ativo',
         allowNull: false
       },
-      createdAt: {
+      is_admin: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 0,
+        allowNull: false
+      },
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date()
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: new Date()
@@ -54,6 +60,6 @@ module.exports = {
   },
   // eslint-disable-next-line no-unused-vars
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('users');
   }
 };

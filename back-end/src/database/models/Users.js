@@ -5,7 +5,7 @@
  * @param {import('sequelize').DataTypes} dataTypes 
  */
 module.exports = (sequelize, dataTypes) => {
-  const User = sequelize.define('User', {
+  const User = sequelize.define('user', {
     name: dataTypes.STRING,
     email: dataTypes.STRING,
     cpf: dataTypes.STRING,
@@ -13,6 +13,7 @@ module.exports = (sequelize, dataTypes) => {
     password: dataTypes.STRING,
     phoneNumber: dataTypes.STRING,
     status: dataTypes.STRING,
+    isAdmin: dataTypes.BOOLEAN,
     createdAt: dataTypes.DATE,
     updatedAt: dataTypes.DATE,
   }, {
