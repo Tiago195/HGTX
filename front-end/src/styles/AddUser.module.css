@@ -1,0 +1,61 @@
+.modal_container {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  background-color: white;
+  width: 25rem;
+  padding: 20px;
+  min-height: 20rem;
+  max-height: fit-content;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form label input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.215);
+}
+
+.form div {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+}
+
+.form div button:nth-child(2) {
+  padding: 10px 15px;
+  color: white;
+  background-color: #2978DF;
+  border-radius: 4px;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+
+.form div button:nth-child(2):hover {
+  transform: scale(1.1);
+}
+
+.form div button:nth-child(1) {
+  padding: 10px 15px;
+  color: #2978DF;
+  background-color: white;
+  border-radius: 4px;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+
+.form div button:nth-child(1):hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: #364559;
+  /* background: black; */
+}
