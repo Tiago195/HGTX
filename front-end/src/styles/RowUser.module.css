@@ -1,0 +1,9 @@
+.name {
+  cursor: pointer;
+  /* transform: scale(1.3); */
+  transition: all .3s;
+}
+
+.name:hover {
+  transform: scale(1.1);
+}

@@ -47,5 +47,5 @@ module.exports = {
 
     return obj;
   },
-  destroy: async (id) => user.destroy({ where: { id } })
+  destroy: async (id) => user.update({ status: 'Desativado', updatedAt: new Date() }, { where: { id } })
 };

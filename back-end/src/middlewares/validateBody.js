@@ -6,6 +6,7 @@ const schemaNewUser = Joi.object({
   name: Joi.string().min(2).required(),
   email: Joi.string().email().required(),
   cpf: Joi.string().min(11).max(11),
+  status: Joi.string().valid('Ativo', 'Pendente', 'Desativado'),
   password: Joi.string().min(6).required(),
   phoneNumber: Joi.string().min(11).max(11),
   birthDate: Joi.date().format('YYYY-MM-DD'),
